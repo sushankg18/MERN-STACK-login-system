@@ -1,0 +1,169 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+body{
+    color: white;
+    font-family: "Hind Siliguri", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.home-main{
+  color: black;
+}
+.home-main>h1{
+  cursor: pointer;
+}
+/* LOGIN.JSX WALI CSS */
+
+.login-main{
+    background-color: purple;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.login-form-div{
+    background-color: white;
+    color: black;
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+.login-inp-fields{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.login-inp-fields>input{
+    margin-bottom: 1rem;
+    margin-top: .2rem;
+    padding: .3rem 1rem;
+    outline: none;
+    border: 1px solid rgb(195, 194, 194);
+    font-size: 1rem;
+}
+.login-inp-fields>div{
+  margin-bottom: 1rem;
+  margin-top: .2rem;
+  outline: none;
+  border: 1px solid rgb(195, 194, 194);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-inp-fields>div>input{
+  width: 100%;
+  padding: .3rem 1rem;  
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+.login-inp-fields>div>span{
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: .5rem;
+  font-size: 1.1rem;
+}
+.login-inp-fields>button{
+    border: none;
+    background-color: brown;
+    color: white;
+    padding: .4rem 1rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.login-inp-fields>p>span{
+  cursor: pointer;
+  width: fit-content;
+}
+.login-inp-fields>p>span:hover{   
+  text-decoration: underline 1px solid purple;
+}
+
+/* REGISTER.JSX WALI CSS... */
+
+.register-main{
+    background-color: purple;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.register-form-div{
+    background-color: white;
+    color: black;
+    width: 30%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+.register-inp-fields{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.register-inp-fields>label{
+  font-weight: 600;
+}
+.register-inp-fields>input{
+    margin-bottom: 1rem;
+    margin-top: .2rem;
+    padding: .3rem 1rem;
+    outline: none;
+    border: 1px solid rgb(195, 194, 194);
+    font-size: 1rem;
+}
+
+.register-inp-fields>div{
+  margin-bottom: 1rem;
+  margin-top: .2rem;
+  outline: none;
+  border: 1px solid rgb(195, 194, 194);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register-inp-fields>div>input{
+  width: 100%;
+  padding: .3rem 1rem;  
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+.register-inp-fields>div>span{
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: .5rem;
+  font-size: 1.1rem;
+}
+.register-inp-fields>button{
+    border: none;
+    background-color: brown;
+    color: white;
+    padding: .4rem 1rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.register-inp-fields>p{
+    cursor: pointer;
+    width: fit-content;
+}
+.register-inp-fields>p:hover{   
+    text-decoration: underline 1px solid purple;
+}
