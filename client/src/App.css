@@ -9,10 +9,24 @@ body{
 }
 .home-main{
   color: black;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: coral;
+  justify-content: space-between ;
+  flex-direction: column;
+  align-items: center;
 }
-.home-main>h1{
+.home-main>div{
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+.home-main>div>h1{
+  color: white;
   cursor: pointer;
 }
+
 /* LOGIN.JSX WALI CSS */
 
 .login-main{
