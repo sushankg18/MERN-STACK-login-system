@@ -41,27 +41,13 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const loginUser = asyncHandler(async (req, res) =>{
 
-    const {email, userName, password} = req.body;
+    // const {email, userName, password} = req.body;
     
-    if ([userName, email, password].some((field) => field.trim() === "")) {
-        throw new ApiError(400, "All fields are Required..!!");
-    }
+    // if(!email || !userName){
+    //     throw new ApiError(400, "Username or Email is required")
+    // }
 
-    const existedUser = await User.findOne({
-        $or: [{ userName }, { email }]
-    })
-
-    if(!existedUser){
-        throw new ApiError(404, "User Not found");
-    } else{
-        User.comparePassword(password, existedUser.password, (err, isMatch) => {
-            if (err) {
-                throw new ApiError(500, "Something Went Wrong...!!")
-            }
-            if (!isMatch) {
-                throw new ApiError(401, "Invalid Credentials..!!")
-            }else{}
-    })}
+   
 
 })
 export { registerUser, loginUser }

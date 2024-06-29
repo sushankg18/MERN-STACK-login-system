@@ -31,7 +31,7 @@ const Register = () => {
         }
       );
       alert("USER CREATED SUCCESSFULLY")
-      navigate('/users/login')
+      navigate('/user/login')
       console.log(response)
     } catch (error) {
       if (error.response && error.response.data) {
