@@ -15,33 +15,36 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault()
 
-    try {
+    if ([fullname, username, email, password].some((field) => field.trim() === "")) {
+      alert("PLEASE FILL ALL THE FIELDS")
+    } else {
 
-
-      const response = await axios.post('http://localhost:5000/api/v1/users/register', {
-        email,
-        password,
-        userName: username,
-        fullName: fullname 
-      },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      try {
+        const response = await axios.post('http://localhost:5000/api/v1/users/register', {
+          email,
+          password,
+          userName: username,
+          fullName: fullname
+        },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        alert("USER CREATED SUCCESSFULLY")
+        navigate('/user/login')
+        console.log(response)
+      } catch (error) {
+        if (error.response && error.response.data) {
+          setError(error.response.data.message)
+        } else {
+          setError('An error occurred')
         }
-      );
-      alert("USER CREATED SUCCESSFULLY")
-      navigate('/user/login')
-      console.log(response)
-    } catch (error) {
-      if (error.response && error.response.data) {
-        setError(error.response.data.message)
-      } else {
-        setError('An error occurred')
+        console.log('ERROR', error)
       }
-      console.log('ERROR', error)
-    }
 
+    }
   }
 
 

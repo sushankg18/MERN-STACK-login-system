@@ -16,6 +16,4 @@ app.use(express.json())
 import useRouter from '../src/routes/user.router.js'
 
 app.use('/api/v1/users', useRouter)
-app.use("/api/v1/users/login", useRouter)
-
 export {app}

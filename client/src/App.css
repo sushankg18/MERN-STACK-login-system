@@ -17,11 +17,25 @@ body{
   flex-direction: column;
   align-items: center;
 }
-.home-main>div{
+.home-main-header{
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  align-items: center;
+  width: 90%;
 }
+.home-main-header > button {
+  background-color: white;
+  color: orange;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  padding: .6rem 2rem;
+
+}
+
+
 .home-main>div>h1{
   color: white;
   cursor: pointer;
