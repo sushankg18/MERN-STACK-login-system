@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
+import Cookies from 'js-cookie';
+import { UserContext } from './context/userContext';
 import { IoEyeSharp } from "react-icons/io5";
 import { HiMiniEyeSlash } from "react-icons/hi2";
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
-const Login = ({setIsLoggedIn}) => {
+const Login = ({ setIsLoggedIn }) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
     const [error, setError] = useState('')
     const navigate = useNavigate()
+
+    const { setUser } = useContext(UserContext)
 
     const handleLogin = async (event) => {
         event.preventDefault()
@@ -26,13 +30,20 @@ const Login = ({setIsLoggedIn}) => {
                     headers: {
                         'Content-Type': "application/json"
                     },
+                    withCredentials: true
                 }
                 )
                 if (respone.status === 200) {
                     setIsLoggedIn(true)
                     alert("User Logged In Successfully")
                     navigate('/');
-                    console.log(respone)
+                    const { user, accessToken } = respone.data.data;
+
+                    Cookies.set('accessToken', accessToken, { expires: 7, path: '' });
+                    Cookies.set('user', JSON.stringify(user), { expires: 7, path: '' });
+                    setUser(user);
+
+
                 }
             } catch (err) {
                 if (err.response && err.response.data) {
